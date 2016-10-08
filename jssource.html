@@ -16,22 +16,16 @@
   -->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script>
+    <script src="index.js" <script>
         $(function() {
             function log(message) {
                 $("<div>").text(message).prependTo("#log");
                 $("#log").scrollTop(0);
             }
 
-            $("#birds").autocomplete({
-                source: function(request, response) {
-                    var bby = require('bestbuy')('tbfysysru7tnt8cs2ja2zec7');
-                    bby.products('name=canon*', {
-                        show: 'name'
-                    }).then(function(data) {
-                        console.log(data);
-                        response(data);
-                    });
+            $("#bb").autocomplete({
+                    source: url: index.js
+
 
                     //      $.ajax({
                     //          url: "https://api.bestbuy.com/v1/products(name=canon*)?format=jsonp&show=name&apiKey=tbfysysru7tnt8cs2ja2zec7",
@@ -56,8 +50,8 @@
 <body>
 
     <div class="ui-widget">
-        <label for="birds">Birds: </label>
-        <input id="birds">
+        <label for="bb">Bb: </label>
+        <input id="bb">
     </div>
 
     <div class="ui-widget" style="margin-top:2em; font-family:Arial">

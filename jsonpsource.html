@@ -23,16 +23,17 @@
                 $("#log").scrollTop(0);
             }
 
-            $("#birds").autocomplete({
+            $("#bb").autocomplete({
                 source: function(request, response) {
                     $.ajax({
-                        url: "https://api.bestbuy.com/v1/products(name=canon*)?format=jsonp&show=name&apiKey=tbfysysru7tnt8cs2ja2zec7",
+                        url: "getBestBuy.php",
                         dataType: "jsonp",
                         data: {
                             name: request.name
                         },
                         success: function(data) {
-                            response(data);
+                            response(data)
+                            console.log(data);
                         }
                     });
                 },
@@ -48,8 +49,8 @@
 <body>
 
     <div class="ui-widget">
-        <label for="birds">Birds: </label>
-        <input id="birds">
+        <label for="bb">Birds: </label>
+        <input id="bb">
     </div>
 
     <div class="ui-widget" style="margin-top:2em; font-family:Arial">
